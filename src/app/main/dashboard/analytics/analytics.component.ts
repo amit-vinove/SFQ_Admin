@@ -313,8 +313,6 @@ export class AnalyticsComponent implements OnInit {
           this.dashboardData = res.response.data;
           this.revenueData = res.response.data.revenue_results;
           this.userData = res.response.data.users
-          console.log(this.revenueData)
-          console.log(this.userData)
           this.initialzeRevenueChart(this.revenueData)
           this.initialzeUsersChart(this.userData)
         }
@@ -346,7 +344,6 @@ export class AnalyticsComponent implements OnInit {
     data?.forEach((element:any)=>{
       months.push(element.month)
     })
-    console.log(months)
     return months
   }
 
@@ -355,7 +352,6 @@ export class AnalyticsComponent implements OnInit {
     data?.forEach((element:any)=>{
       users.push(element.user_count)
     })
-    console.log(users)
     return users
   }
 
@@ -416,7 +412,7 @@ export class AnalyticsComponent implements OnInit {
     this.usersChartOptions = {
       series: [
         {
-          name: "Desktops",
+          name: "Users",
           data: this.getUsersCount(data)
         }
       ],

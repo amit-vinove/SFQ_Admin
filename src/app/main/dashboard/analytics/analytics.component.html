@@ -1,7 +1,7 @@
 <div class="content-wrapper container-xxl p-0">
   <div class="content-body">
     <div class="row match-height">
-      <div class="col-lg-6 col-md-12 col-sm-12">
+      <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="card card-congratulations">
           <div class="card-body text-center">
             <img src="assets/images/elements/decore-left.png" class="congratulations-img-left" alt="card-img-left" />
@@ -14,7 +14,6 @@
             <div class="text-center">
               <h1 class="mb-1 text-white">Hello {{ currentUser?.fullName }},</h1>
               <p class="card-text m-auto w-75">Welcome to <strong>Admin Dashboard</strong>.</p>
-
               <p class="card-text m-auto w-75">
                 <span *ngIf="loading" class="spinner-border spinner-border-sm"></span>
               </p>
@@ -22,8 +21,9 @@
           </div>
         </div>
       </div>
-
-      <div class="col-lg-3 col-sm-6 col-12">
+    </div>
+    <div class="row match-height">
+      <div class="col-lg-4 col-sm-6 col-12">
         <div class="card">
           <div class="card-header d-flex flex-column align-items-start pb-0">
             <div class="avatar bg-light-primary p-50 m-0">
@@ -33,53 +33,36 @@
             </div>
             <h2 class="font-weight-bolder mt-1"></h2>
             <p class="mb-0"><b>Total Users</b></p>
-            <h2 class="mb-0">{{dashboardData?.total_users}}</h2>
-          </div>
-
-          <div id="gainedChartoptions" #gainedChartRef>
-            <!-- <apx-chart [series]="data?.subscribers_gained.series" [chart]="{
-                height: 100,
-                width: isMenuToggled === true ? gainedChartRef.offsetWidth : gainedChartoptions.chart.width,
-                type: 'area',
-                toolbar: {
-                  show: false
-                },
-                sparkline: {
-                  enabled: true
-                }
-              }" [stroke]="gainedChartoptions.stroke" [fill]="gainedChartoptions.fill"
-              [tooltip]="gainedChartoptions.tooltip" [colors]="gainedChartoptions.colors"
-              [dataLabels]="gainedChartoptions.dataLabels"></apx-chart> -->
+            <h2 class="mb-1">{{dashboardData?.total_users}}</h2>
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-sm-6 col-12">
+
+      <div class="col-lg-4 col-sm-6 col-12">
         <div class="card">
           <div class="card-header d-flex flex-column align-items-start pb-0">
-            <div class="avatar bg-light-warning p-50 m-0">
+            <div class="avatar bg-light-primary p-50 m-0">
               <div class="avatar-content">
                 <i data-feather="package" class="font-medium-5"></i>
               </div>
             </div>
             <h2 class="font-weight-bolder mt-1"></h2>
             <p class="mb-0"><b>Food Supplier List</b></p>
-            <h2 class="mb-0">{{dashboardData?.listed_suppliers}}</h2>
+            <h2 class="mb-1">{{dashboardData?.listed_suppliers}}</h2>
           </div>
-
-          <div id="orderChartoptions" #orderChartRef>
-            <!-- <apx-chart [series]="data?.ordersRecevied.series" [chart]="{
-                height: 100,
-                width: isMenuToggled === true ? orderChartRef.offsetWidth : orderChartoptions.chart.width,
-                type: 'area',
-                toolbar: {
-                  show: false
-                },
-                sparkline: {
-                  enabled: true
-                }
-              }" [stroke]="orderChartoptions.stroke" [fill]="orderChartoptions.fill"
-              [tooltip]="orderChartoptions.tooltip" [colors]="orderChartoptions.colors"
-              [dataLabels]="orderChartoptions.dataLabels"></apx-chart> -->
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-header d-flex flex-column align-items-start pb-0">
+            <div class="avatar bg-light-primary p-50 m-0">
+              <div class="avatar-content">
+                <i data-feather="dollar-sign" class="font-medium-5"></i>
+              </div>
+            </div>
+            <h2 class="font-weight-bolder mt-1"></h2>
+            <p class="mb-0"><b>Total Revenue</b></p>
+            <h2 class="mb-1">{{dashboardData?.total_revenue}}</h2>
           </div>
         </div>
       </div>
