@@ -1,0 +1,79 @@
+<div class="slideout-content">
+    <!-- Modal to add new user starts-->
+    <div class="modalsd modal-slide-in sdfade new-user-modal" id="modals-slide-in">
+        <div class="modal-dialog">
+            <form class="add-new-user modal-content pt-0" [formGroup]="faqForm">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                    (click)="toggleSidebar('new-user-sidebar')">
+                    ×
+                </button>
+                <div class="modal-header mb-1">
+                    <h5 class="modal-title" id="exampleModalLabel">Add FAQ</h5>
+                </div>
+                <div class="modal-body flex-grow-1">
+                    <div class="form-group mb-2">
+                        <label class="form-label" for="faq-page">Page</label>
+                        <select id="faq-page" class="form-control" name="page" formControlName="page">
+                            <option value="{{page.id}}" *ngFor="let page of pages">{{page.name}}</option>
+                        </select>
+                        <span *ngIf="page?.hasError('required') && (page?.dirty || page?.touched)" class="error-span">
+                            Please select page number </span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="basic-icon-default-fullname">Question</label>
+                        <input type="text" class="form-control" id="faq-question" name="question" placeholder="Question"
+                            formControlName="question" />
+
+                        <span *ngIf="question?.hasError('required') && (question?.dirty || question?.touched)"
+                            class="error-span">
+                            Please enter question </span>
+                        <span *ngIf="question?.hasError('pattern')" class="error-span"> Question can't have numbers or
+                            special characters!
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="basic-icon-default-uname">Answer</label>
+                        <input type="text" class="form-control" id="faq-answer" name="answer" placeholder="Answer"
+                            formControlName="answer" />
+
+                        <span *ngIf="answer?.hasError('required') && (answer?.dirty || answer?.touched)"
+                            class="error-span">
+                            Please enter answer </span>
+                        <span *ngIf="answer?.hasError('pattern')" class="error-span"> Answer can't have numbers or
+                            special characters!
+                        </span>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label class="form-label" for="basic-icon-default-email">Email</label>
+                        <input type="text" id="basic-icon-default-email" class="form-control dt-email"
+                            placeholder="john.doe@example.com" aria-label="john.doe@example.com"
+                            aria-describedby="basic-icon-default-email2" name="user-email" [(ngModel)]="email"
+                            [class.error]="newUserForm.submitted && FEmailRef.invalid" #FEmailRef="ngModel" required />
+                        <span *ngIf="newUserForm.submitted && FEmailRef.invalid" class="invalid-form">
+                            <small class="form-text text-danger" *ngIf="FEmailRef.errors.required">This field is
+                                required!</small>
+                        </span>
+                        <small class="form-text text-muted"> You can use letters, numbers & periods </small>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="user-role">User Role</label>
+                        <select id="user-role" class="form-control">
+                            <option value="subscriber">Subscriber</option>
+                            <option value="editor">Editor</option>
+                            <option value="maintainer">Maintainer</option>
+                            <option value="author">Author</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    -->
+                    <button type="submit" class="btn btn-primary mr-1" (click)="submit()" rippleEffect>Save</button>
+                    <button type="reset" class="btn btn-outline-secondary" (click)="toggleSidebar('new-user-sidebar')"
+                        rippleEffect>
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Modal to add new user Ends-->
+</div>

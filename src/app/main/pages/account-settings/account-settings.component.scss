@@ -1,0 +1,13 @@
+@import '@core/scss/angular/libs/select.component.scss';
+@import '@core/scss/angular/libs/flatpickr.component.scss';
+
+.form-group .error-span {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+}
+
+.swal2-styled.swal2-confirm{
+    background-color: #337C2A;
+}

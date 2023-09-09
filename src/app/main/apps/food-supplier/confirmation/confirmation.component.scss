@@ -1,0 +1,22 @@
+@import '/src/@core/scss/angular/libs/flatpickr.component.scss';
+@import '/src/@core/scss/angular/libs/select.component.scss';
+@import '/src/@core/scss/base/pages/app-user.scss';
+@import '/src/@core/scss/base/pages/app-ecommerce.scss';
+
+.col-form-label label {
+    font-size: 15px;
+}
+
+.form-group label {
+    font-size: 15px;
+}
+
+.card-img-top {
+    height: 150px;
+    width: 150px;
+}
+
+.grid-view {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}

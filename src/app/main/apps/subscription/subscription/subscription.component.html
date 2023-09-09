@@ -1,0 +1,172 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+        <!-- User List -->
+        <section class="users-list-wrapper">
+            <!-- users filter start -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <h5>Filter By Plan</h5>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <h5>Filter By Validity</h5>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <h5>Filter By Price</h5>
+                        </div>
+                    </div>
+                    <div class="users-list-filter">
+                        <form>
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <fieldset class="form-group">
+                                        <ng-select [items]="selectPlan" [(ngModel)]="selectedPage" name="selectedPage"
+                                            bindLabel="name" placeholder="Select Plan"
+                                            (change)="filterByPlan($event)"></ng-select>
+                                    </fieldset>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <fieldset class="form-group">
+                                        <ng-select [items]="selectValidity" [(ngModel)]="selectedValidity"
+                                            name="selectedPage" bindLabel="name" placeholder="Select Validity"
+                                            (change)="filterByValidity($event)"></ng-select>
+                                    </fieldset>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <fieldset class="form-group">
+                                        <ng-select [items]="selectPrice" [(ngModel)]="selectedPrice" name="selectedPage"
+                                            bindLabel="name" placeholder="Select Price"
+                                            (change)="filterByPrice($event)"></ng-select>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- users filter end -->
+
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="d-flex justify-content-between align-items-center m-1">
+                            <fieldset class="form-group">
+                                <label>Sort Data</label>
+                                <ng-select [items]="selectOrder" [(ngModel)]="selectedOrder" name="selectedOrder"
+                                    bindLabel="name" placeholder="Select Order" (change)="sortData($event)"></ng-select>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 d-flex justify-content-start justify-content-md-end">
+                        <div class="d-flex align-items-center justify-content-end pr-1 pb-1 pb-md-0">
+                            <label class="d-flex align-items-center ml-1 ml-md-0">Search:<input
+                                    [(ngModel)]="searchValue" name="searchValue" type="search"
+                                    class="form-control ml-25" (keyup)="filterUpdate($event)"
+                                    (search)="filterUpdate($event)" /></label>
+                            <button class="btn btn-primary ml-1" rippleEffect (click)="addSubscription()">
+                                <i data-feather="plus" class="d-sm-none d-inline-block mr-0 mr-sm-1"></i><span
+                                    class="d-none d-sm-inline-block">Add Subscription</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <ngx-datatable [rows]="rows" [rowHeight]="50" class="bootstrap core-bootstrap" [limit]="selectedOption"
+                    [columnMode]="ColumnMode.force" [headerHeight]="50" [footerHeight]="50" [scrollbarH]="true">
+                    <ngx-datatable-column name="Name" [width]="180">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            <div class="d-flex align-items-center">
+                                <div class="cell-line-height">
+                                    <a class="font-medium-1 d-block"><span
+                                            class="font-weight-bold">{{row?.name}}</span></a>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="Validity" [width]="200">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            <div class="d-flex align-items-center">
+                                <div class="cell-line-height">
+                                    <a class="font-medium-1 d-block"><span
+                                            class="font-weight-bold">{{row?.validity}}</span></a>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="Price" [width]="200">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            <div class="d-flex align-items-center">
+                                <div class="cell-line-height">
+                                    <a class="font-medium-1 d-block"><span
+                                            class="font-weight-bold">{{row?.price}}</span></a>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="Total Purchasers" [width]="200">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            <div class="d-flex align-items-center">
+                                <div class="cell-line-height">
+                                    <a class="font-medium-1 d-block"><span
+                                            class="font-weight-bold">{{row?.numberOfPurchasers}}</span></a>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="Enable" [width]="200">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            <div class="d-flex align-items-center">
+                                <div class="cell-line-height">
+                                    <div class="custom-control custom-control-primary custom-switch">
+                                        <input class="custom-control-input" type="checkbox" [id]="row.id"
+                                            [checked]="row?.enable" (click)="statusUpdate(row)" />
+                                        <label class="custom-control-label" [htmlFor]="row.id"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="Actions" [width]="100" [sortable]="false">
+                        <ng-template ngx-datatable-cell-template let-row="row">
+                            <div container="body">
+                                <button type="button" class="btn icon-btn btn-sm hide-arrow" rippleEffect
+                                    (click)="editSubscription(row.id)">
+                                    <span [data-feather]="'edit'" [class]="'cursor-pointer'"></span>
+                                </button>
+                                <button type="button" class="btn icon-btn btn-sm hide-arrow" rippleEffect
+                                    (click)="deleteSubscription(row.id)">
+                                    <span [data-feather]="'trash'" [class]="'cursor-pointer'"></span>
+                                </button>
+
+                            </div>
+                        </ng-template>
+                    </ngx-datatable-column>
+                </ngx-datatable>
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="d-flex justify-content-between align-items-center m-1">
+                            <label class="d-flex align-items-center">Show
+                                <select class="form-control mx-25" [(ngModel)]="pagesize" (change)="onChangePageSize()">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                                entries
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 d-flex justify-content-start justify-content-md-end"></div>
+                </div>
+            </div>
+        </section>
+        <!--/ User List -->
+    </div>
+
+    <!-- New User Sidebar -->
+    <core-sidebar class="modal modal-slide-in sidebar-todo-modal fade" name="new-user-sidebar"
+        overlayClass="modal-backdrop">
+        <!-- <app-new-subscription></app-new-subscription> -->
+    </core-sidebar>
+    <!--/ New User Sidebar -->
+</div>

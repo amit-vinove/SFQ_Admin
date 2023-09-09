@@ -1,0 +1,417 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+        <!-- users edit start -->
+        <section class="app-user-edit">
+            <div class="card">
+                <div class="card-body">
+                    <ul ngbNav #nav="ngbNav" class="nav nav-pills">
+                        <li ngbNavItem>
+                            <a ngbNavLink class="d-flex align-items-center"><span class="d-none d-sm-block">Contact
+                                    Details</span></a>
+                            <ng-template ngbNavContent>
+                                <!-- Information Tab starts -->
+                                <!-- <h1 style="padding-bottom: 20px !important">Contact Details</h1> -->
+                                <h4 class="mb-1">
+                                    <i data-feather="user" [size]="16" class="mr-75 font-medium-4"></i>
+                                    <span class="align-middle" style="padding-bottom: 20px !important">Contact Details</span>
+                                </h4>
+                                <div class="tab-pane" id="information" aria-labelledby="information-tab"
+                                    role="tabpanel">
+                                    <!-- users edit Info form start  -->
+
+                                    <form class="form form-horizontal">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-2 col-form-label">
+                                                        <label>Facebook</label>
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" id="first-name" class="form-control"
+                                                            name="fname" placeholder="Facebook" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-2 col-form-label">
+                                                        <label>YouTube</label>
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <input type="email" id="email-id" class="form-control"
+                                                            name="email-id" placeholder="YouTube" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-2 col-form-label">
+                                                        <label>Instagram</label>
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" id="first-name" class="form-control"
+                                                            name="fname" placeholder="Instagram" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-6">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-2 col-form-label">
+                                                        <label>SoundCloud</label>
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <input type="email" id="email-id" class="form-control"
+                                                            name="email-id" placeholder="Email" />
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <div class="col-6">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-2 col-form-label">
+                                                        <label>Twitter</label>
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" id="first-name" class="form-control"
+                                                            name="fname" placeholder="Twitter" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-2 col-form-label">
+                                                        <label>Mobile Number</label>
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <input type="email" id="email-id" class="form-control"
+                                                            name="email-id" placeholder="Mobile Number" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-2 col-form-label">
+                                                        <label>Email</label>
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <input type="email" id="email-id" class="form-control"
+                                                            name="email-id" placeholder="Email" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 offset-sm-5">
+                                                <button type="submit" rippleEffect
+                                                    class="btn btn-primary mr-1">Approve</button>
+                                                <button type="reset" rippleEffect
+                                                    class="btn btn-outline-secondary">Reject</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <!-- users edit Info form ends -->
+                                </div>
+                                <!-- Information Tab ends -->
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem>
+                            <a ngbNavLink class="d-flex align-items-center">
+                                <span class="d-none d-sm-block">Images & Videos</span></a>
+                                
+                            <ng-template ngbNavContent>
+                                <!-- Account Tab starts -->
+                                
+                                <h4 class="mb-1">
+                                    <i data-feather="image" [size]="16" class="mr-75 font-medium-4"></i>
+                                    <span class="align-middle">Upload Images</span>
+                                </h4>
+                                <div class="content-wrapper container-xxl p-0">
+                                    <div class="content-body">
+                                        <section id="wishlist" class="grid-view wishlist-items">
+                                            <div class="card ecommerce-card">
+                                                <div class="item-img text-center">
+                                                    <img class="img-fluid card-img-top"
+                                                        src="../../../../../../assets/images/img/profile-icon.png"
+                                                        alt="img-placeholder" />
+                                                </div>
+                                            </div>
+                                            <div class="card ecommerce-card">
+                                                <div class="item-img text-center">
+                                                    <img class="img-fluid card-img-top"
+                                                        src="../../../../../../assets/images/img/profile-icon.png"
+                                                        alt="img-placeholder" />
+                                                </div>
+                                            </div>
+                                            <div class="card ecommerce-card">
+                                                <div class="item-img text-center">
+                                                    <img class="img-fluid card-img-top"
+                                                        src="../../../../../../assets/images/img/profile-icon.png"
+                                                        alt="img-placeholder" />
+                                                </div>
+                                            </div>
+                                            <div class="card ecommerce-card">
+                                                <div class="item-img text-center">
+                                                    <img class="img-fluid card-img-top"
+                                                        src="../../../../../../assets/images/img/profile-icon.png"
+                                                        alt="img-placeholder" />
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                                <h4 class="mb-1">
+                                    <i data-feather="image" [size]="16" class="mr-75 font-medium-4"></i>
+                                    <span class="align-middle">Upload Wallpaper</span>
+                                </h4>
+                                <div class="content-wrapper container-xxl p-0">
+                                    <div class="content-body">
+                                        <section id="wishlist" class="grid-view wishlist-items">
+                                            <div class="card ecommerce-card">
+                                                <div class="item-img text-center">
+                                                    <img class="img-fluid card-img-top"
+                                                        src="../../../../../../assets/images/img/profile-icon.png"
+                                                        alt="img-placeholder" />
+                                                </div>
+                                            </div>
+                                            <div class="card ecommerce-card">
+                                                <div class="item-img text-center">
+                                                    <img class="img-fluid card-img-top"
+                                                        src="../../../../../../assets/images/img/profile-icon.png"
+                                                        alt="img-placeholder" />
+                                                </div>
+                                            </div>
+                                            <div class="card ecommerce-card">
+                                                <div class="item-img text-center">
+                                                    <img class="img-fluid card-img-top"
+                                                        src="../../../../../../assets/images/img/profile-icon.png"
+                                                        alt="img-placeholder" />
+                                                </div>
+                                            </div>
+                                            <div class="card ecommerce-card">
+                                                <div class="item-img text-center">
+                                                    <img class="img-fluid card-img-top"
+                                                        src="../../../../../../assets/images/img/profile-icon.png"
+                                                        alt="img-placeholder" />
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                                <h4 class="mb-1">
+                                    <i data-feather="image" [size]="16" class="mr-75 font-medium-4"></i>
+                                    <span class="align-middle">Upload Videos</span>
+                                </h4>
+                                <div class="content-wrapper container-xxl p-0">
+                                    <div class="content-body">
+                                        <section id="wishlist" class="grid-view wishlist-items">
+                                            <div class="card ecommerce-card">
+                                                <div class="item-img text-center">
+                                                    <img class="img-fluid card-img-top"
+                                                        src="../../../../../../assets/images/img/profile-icon.png"
+                                                        alt="img-placeholder" />
+                                                </div>
+                                            </div>
+                                            <div class="card ecommerce-card">
+                                                <div class="item-img text-center">
+                                                    <img class="img-fluid card-img-top"
+                                                        src="../../../../../../assets/images/img/profile-icon.png"
+                                                        alt="img-placeholder" />
+                                                </div>
+                                            </div>
+                                            <div class="card ecommerce-card">
+                                                <div class="item-img text-center">
+                                                    <img class="img-fluid card-img-top"
+                                                        src="../../../../../../assets/images/img/profile-icon.png"
+                                                        alt="img-placeholder" />
+                                                </div>
+                                            </div>
+                                            <div class="card ecommerce-card">
+                                                <div class="item-img text-center">
+                                                    <img class="img-fluid card-img-top"
+                                                        src="../../../../../../assets/images/img/profile-icon.png"
+                                                        alt="img-placeholder" />
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 offset-sm-5">
+                                    <button type="submit" rippleEffect class="btn btn-primary mr-1">Approve</button>
+                                    <button type="reset" rippleEffect class="btn btn-outline-secondary">Reject</button>
+                                </div>
+                                <!-- Account Tab ends -->
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem>
+                            <a ngbNavLink class="d-flex align-items-center"><span class="d-none d-sm-block">Company
+                                    Details</span></a>
+                            <ng-template ngbNavContent>
+                                <!-- <h1 style="padding-bottom: 20px !important">Company</h1> -->
+                                <h4 class="mb-1">
+                                    <i data-feather="bar-chart-2" [size]="16" class="mr-75 font-medium-4"></i>
+                                    <span class="align-middle" style="padding-bottom: 20px !important">Company Details</span>
+                                </h4>
+                                <div class="tab-pane" id="social" aria-labelledby="social-tab" role="tabpanel">
+                                    <!-- users edit social form start -->
+                                    <form class="form form-vertical">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label for="first-name-vertical">Company Name</label>
+                                                    <input type="text" id="first-name-vertical" class="form-control"
+                                                        name="fname" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label for="email-id-vertical">Description</label>
+                                                    <textarea data-length="120" class="form-control char-textarea"
+                                                        rows="5"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 offset-sm-5">
+                                                <button type="submit" rippleEffect
+                                                    class="btn btn-primary mr-1">Approve</button>
+                                                <button type="reset" rippleEffect
+                                                    class="btn btn-outline-secondary">Reject</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- users edit socail form ends -->
+                                </div>
+                                <!-- Social Tab ends -->
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem>
+                            <a ngbNavLink class="d-flex align-items-center"><span class="d-none d-sm-block">Awards &
+                                    Certification</span></a>
+                            <ng-template ngbNavContent>
+                            <h4 class="mb-1">
+                                <i data-feather="award" [size]="16" class="mr-75 font-medium-4"></i>
+                                <span class="align-middle">Awards</span>
+                            </h4>
+                                <div class="tab-pane" id="social" aria-labelledby="social-tab" role="tabpanel">
+                                    <!-- users edit social form start -->
+                                    <form class="form form-vertical">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="first-name-vertical">Excellent Services</label>
+                                                    <div class="item-img text-center">
+                                                        <img class="img-fluid card-img-top"
+                                                            src="../../../../../../assets/images/img/profile-icon.png"
+                                                            alt="img-placeholder" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="first-name-vertical">Excellent Services</label>
+                                                    <div class="item-img text-center">
+                                                        <img class="img-fluid card-img-top"
+                                                            src="../../../../../../assets/images/img/profile-icon.png"
+                                                            alt="img-placeholder" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                    <!-- users edit socail form ends -->
+                                </div>
+                            <h4 class="mb-1">
+                                <i data-feather="award" [size]="16" class="mr-75 font-medium-4"></i>
+                                <span class="align-middle">Qualifications</span>
+                            </h4>
+                                <div class="tab-pane" id="social" aria-labelledby="social-tab" role="tabpanel">
+                                    <!-- users edit social form start -->
+                                    <form class="form form-vertical">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="first-name-vertical">BRC Food Certificate</label>
+                                                    <div class="item-img text-center">
+                                                        <img class="img-fluid card-img-top"
+                                                            src="../../../../../../assets/images/img/profile-icon.png"
+                                                            alt="img-placeholder" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="first-name-vertical">Canada GAP - Option B
+                                                        Certificate</label>
+                                                    <div class="item-img text-center">
+                                                        <img class="img-fluid card-img-top"
+                                                            src="../../../../../../assets/images/img/profile-icon.png"
+                                                            alt="img-placeholder" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- users edit socail form ends -->
+                                </div>
+                                <div class="col-sm-4 offset-sm-5">
+                                    <button type="submit" rippleEffect class="btn btn-primary mr-1">Approve</button>
+                                    <button type="reset" rippleEffect class="btn btn-outline-secondary">Reject</button>
+                                </div>
+                                <!-- Social Tab ends -->
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem>
+                            <a ngbNavLink class="d-flex align-items-center"><span class="d-none d-sm-block">Products &
+                                    Services</span></a>
+                            <ng-template ngbNavContent>
+                            <h4 class="mb-1">
+                                <i data-feather="bar-chart-2" [size]="16" class="mr-75 font-medium-4"></i>
+                                <span class="align-middle">Company</span>
+                            </h4>
+                                <div class="tab-pane" id="social" aria-labelledby="social-tab" role="tabpanel">
+                                    <!-- users edit social form start -->
+                                    <form class="form form-vertical">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="first-name-vertical">Services</label>
+                                                        <input type="text" id="first-name-vertical" class="form-control"
+                                                            name="fname" placeholder="Mention Service Name" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="email-id-vertical">Description</label>
+                                                        <textarea data-length="120" class="form-control char-textarea"
+                                                            rows="5"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="item-img text-center">
+                                                        <img class="img-fluid card-img-top"
+                                                            src="../../../../../../assets/images/img/profile-icon.png"
+                                                            alt="img-placeholder" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 offset-sm-5">
+                                                <button type="submit" rippleEffect
+                                                    class="btn btn-primary mr-1">Approve</button>
+                                                <button type="reset" rippleEffect
+                                                    class="btn btn-outline-secondary">Reject</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- users edit socail form ends -->
+                                </div>
+                                <!-- Social Tab ends -->
+                            </ng-template>
+                        </li>
+                    </ul>
+                    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+                </div>
+            </div>
+        </section>
+        <!-- users edit ends -->
+    </div>
+</div>

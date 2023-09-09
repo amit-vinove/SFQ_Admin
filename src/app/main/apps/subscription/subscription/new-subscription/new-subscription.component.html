@@ -1,0 +1,85 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+        <!-- users edit start -->
+        <section class="app-user-edit">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="mb-3">
+                        <span class="align-middle" style="padding-bottom: 20px !important">Create New Plan</span>
+                    </h3>
+                    <div class="tab-pane" id="information" aria-labelledby="information-tab" role="tabpanel">
+                        <!-- users edit Info form start  -->
+
+                        <form class="form form-horizontal" [formGroup]="subscriptionForm">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group row">
+                                        <div class="col-sm-4 col-form-label">
+                                            <label>Plan Title</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="text" id="plan-title" class="form-control" name="name"
+                                                placeholder="plan title" formControlName="name" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group row">
+                                        <div class="col-sm-2 col-form-label">
+                                            <label>Validity</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input type="text" id="validity" class="form-control" name="validity"
+                                                placeholder="validity" formControlName="validity" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group row">
+                                        <div class="col-sm-2 col-form-label">
+                                            <label>Price</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input type="text" id="price" class="form-control" name="price"
+                                                placeholder="price" formControlName="price" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="email-id-vertical">Benefit Description</label>
+                                        <angular-editor formControlName="benefits" [config]="config"></angular-editor>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group row">
+                                        <div class="col-sm-4 col-form-label ">
+                                            <label>Enable</label>
+                                        </div>
+                                        <div class="custom-control custom-control-primary custom-switch ">
+                                            <input class="custom-control-input" type="checkbox" name="enable"
+                                                id="enableSwitch" formControlName="enable" (click)="toggleStatus()" />
+                                            <label class="custom-control-label" for="enableSwitch"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 offset-sm-5">
+                                    <a [routerLink]="['/apps/subscription/subscription']">
+                                        <button type="reset" rippleEffect
+                                            class="btn btn-outline-secondary mr-1">Cancel</button>
+                                    </a>
+                                    <button type="submit" rippleEffect (click)="submit()"
+                                        class="btn btn-primary">Create</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- users edit Info form ends -->
+                    </div>
+                    <!-- Information Tab ends -->
+                </div>
+            </div>
+        </section>
+        <!-- users edit ends -->
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<div class="auth-wrapper auth-v2">
+  <div class="auth-inner row m-0" style="padding: unset">
+    <!-- Left Text-->
+    <div class="col-lg-5 login-bg-div w-100 d-lg-flex" style="padding: unset !important">
+      <div class="w-100 d-lg-flex">
+        <img class="login-bg-logo" src="assets/images/img/logo-white.png" alt="Logo V2" />
+        <div class="left-box">
+          <h1 style="color: white">Connecting like never before</h1>
+          <p>Introducing a way to connect with a wide range of food suppliers, manufacturers, and distributors all over
+            the world, without ever leaving your home or office.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Login-->
+    <div class="d-flex col-lg-7 align-items-center auth-bg px-2 p-lg-5">
+      <div class="col-12 col-sm-8 col-md-6 col-lg-8">
+        <h2 class="card-title">Login to your account</h2>
+        <p class="card-text">Please enter your credentials to login</p>
+        <hr />
+        <ngb-alert [type]="'danger'" [dismissible]="false" *ngIf="error">
+          <div class="alert-body">
+            <p>{{ error }}</p>
+          </div>
+        </ngb-alert>
+
+        <form class="auth-login-form mt-2" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label class="form-label" for="login-email">Email Address</label>
+            <input type="text" formControlName="email" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Enter your mail ID"
+              aria-describedby="login-email" autofocus="" tabindex="1" />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">Email is required</div>
+              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="d-flex justify-content-between">
+              <label class="form-label" for="login-password">Password</label>
+            </div>
+            <div class="input-group input-group-merge form-password-toggle">
+              <input [type]="passwordTextType ? 'text' : 'password'" formControlName="password"
+                class="form-control form-control-merge"
+                [ngClass]="{ 'is-invalid error': submitted && f.password.errors }" placeholder="Enter your Password*"
+                aria-describedby="login-password" tabindex="2" />
+              <div class="input-group-append">
+                <span class="input-group-text cursor-pointer"><i class="feather font-small-4" [ngClass]="{
+                      'icon-eye-off': !passwordTextType,
+                      'icon-eye': passwordTextType
+                    }" (click)="togglePasswordTextType()"></i></span>
+              </div>
+            </div>
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback"
+              [ngClass]="{ 'd-block': submitted && f.password.errors }">
+              <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+          </div>
+          <div class="form-group d-flex justify-content-between">
+            <div class="custom-control custom-checkbox">
+              <input class="custom-control-input" id="remember-me" type="checkbox" tabindex="3" />
+              <label class="custom-control-label" for="remember-me"> Remember Me</label>
+            </div>
+            <!-- <div >
+              <a routerLink="/auth/forgot-password"><small>Forgot
+                  Password?</small></a>
+            </div> -->
+          </div>
+          <button [disabled]="loading" class="btn btn-primary btn-block" tabindex="4" rippleEffect><span *ngIf="loading"
+              class="spinner-border spinner-border-sm mr-1"></span>Log in</button>
+        </form>
+        <!-- <p class="text-center mt-2">
+          <span>New on our platform?</span><a routerLink="/auth/register-v2"><span>&nbsp;Create an account</span></a>
+        </p> -->
+        <!-- <div class="divider my-2">
+          <div class="divider-text"></div>
+        </div>
+        <div class="auth-footer-btn d-flex justify-content-center social-login">
+          <a href="#"><img src="../../../assets/images/img/google-icon.png" alt="Icon" /></a>
+          <a href="#"><img src="../../../assets/images/img/linkedin-icon.png" alt="Icon" /></a>
+          <a href="#"><img src="../../../assets/images/img/facebook-icon.png" alt="Icon" /></a>
+        </div>
+      </div> -->
+    </div>
+    <!-- /Login-->
+  </div>
+</div>
