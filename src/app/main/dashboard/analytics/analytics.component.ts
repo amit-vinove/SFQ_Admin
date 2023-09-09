@@ -309,7 +309,6 @@ export class AnalyticsComponent implements OnInit {
     this._dashboardService.getDashboardData().subscribe(
       (res: any) => {
         if (res) {
-          console.log(res.response.data)
           this.dashboardData = res.response.data;
           this.revenueData = res.response.data.revenue_results;
           this.userData = res.response.data.users

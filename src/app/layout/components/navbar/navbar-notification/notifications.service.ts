@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-import { BehaviorSubject } from 'rxjs';
+import { HttpHelperMockService } from 'app/core/services/http-helper-mock.service';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class NotificationsService {
    *
    * @param {HttpClient} _httpClient
    */
-  constructor(private _httpClient: HttpClient) {
+  constructor(private _httpClient: HttpClient,private _httpHelperMock: HttpHelperMockService) {
     this.onApiDataChange = new BehaviorSubject('');
     // this.getNotificationsData();
   }
@@ -32,4 +32,11 @@ export class NotificationsService {
   //     }, reject);
   //   });
   // }
+
+  getNotificationData(): Observable<any> {
+    return this._httpHelperMock.request("getNotifcationList", {
+      method: "GET",
+    });
+  }
+  
 }
