@@ -41,9 +41,9 @@ export const menu: CoreMenu[] = [
         url: "apps/user/user-list",
       },
       {
-        id: "foodSupplierManagement",
-        title: "Food Supplier Management",
-        translate: "Food Supplier Management",
+        id: "foodSupplier",
+        title: "Food Supplier",
+        translate: "Food Supplier",
         type: "collapsible",
 
         icon: "user-plus",
@@ -51,11 +51,19 @@ export const menu: CoreMenu[] = [
         children: [
           {
             id: "supplier",
-            title: "Supplier",
-            translate: "Food Supplier Management",
+            title: "Food Supplier Confirmation",
+            translate: "Food Supplie Confirmationr",
             type: "item",
             icon: "circle",
             url: "apps/supplier/food-supplier"
+          },
+          {
+            id: "supplierData",
+            title: "Food Supplier Management",
+            translate: "Food Supplier Management",
+            type: "item",
+            icon: "circle",
+            url: "apps/supplier/food-supplier-management"
           },
           {
             id: "confirmation",

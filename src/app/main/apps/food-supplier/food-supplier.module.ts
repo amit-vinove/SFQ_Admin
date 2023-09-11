@@ -17,6 +17,8 @@ import { FoodSupplierComponent } from './food-supplier/food-supplier.component';
 import { FoodSupplierService } from './food-supplier/food-supplier.service';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ConfirmationService } from './confirmation/confirmation.service';
+import { FoodSupplierHomeComponent } from './food-supplier-home/food-supplier-home.component';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
 
 
@@ -24,6 +26,12 @@ import { ConfirmationService } from './confirmation/confirmation.service';
 const routes: Routes = [
   {
     path: 'food-supplier',
+    component: FoodSupplierHomeComponent,
+
+    data: { animation: 'FoodSupplierHomeComponent' }
+  },
+  {
+    path: 'food-supplier-management',
     component: FoodSupplierComponent,
 
     data: { animation: 'FoodSupplierComponent' }
@@ -40,7 +48,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     FoodSupplierComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    FoodSupplierHomeComponent
 
   ],
   imports: [
@@ -54,7 +63,8 @@ const routes: Routes = [
     NgxDatatableModule,
     CorePipesModule,
     CoreDirectivesModule,
-    CoreSidebarModule
+    CoreSidebarModule,
+    PerfectScrollbarModule
   ],
   providers: [FoodSupplierService, ConfirmationService]
 })
